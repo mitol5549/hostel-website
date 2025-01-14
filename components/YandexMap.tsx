@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useEffect, useRef, useState } from 'react';
 
@@ -34,15 +34,24 @@ const YandexMap = () => {
 
           ymaps.ready(() => {
             const map = new ymaps.Map(mapContainerRef.current, {
-              center: [56.838011, 60.597465], // Координаты Красноярска
+              center: [56.010563, 92.852572], // Координаты Красноярска
               zoom: 10, // Уровень масштабирования
-              controls: ['zoomControl'], // Контролы карты (например, зум)
+              controls: [], // Убираем все элементы управления, включая зум
             });
 
+            // Отключаем масштабирование при скролле
+            map.behaviors.disable('scrollZoom'); // Отключаем масштабирование колесиком
+
             // Добавляем маркер
-            const placemark = new ymaps.Placemark([56.838011, 60.597465], {
-              balloonContent: 'Красноярск, Россия', // Подсказка при клике на маркер
-            });
+            const placemark = new ymaps.Placemark(
+              [56.010563, 92.852572], // Координаты маркера
+              {
+                balloonContent: 'Красноярск, Россия', // Подсказка при клике на маркер
+              },
+              {
+                preset: 'islands#greenIcon', // Тёмно-зелёный цвет
+              },
+            );
 
             // Размещаем маркер на карте
             map.geoObjects.add(placemark);

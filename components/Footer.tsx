@@ -1,86 +1,61 @@
-import { FOOTER_CONTACT_INFO, FOOTER_LINKS, SOCIALS } from "@/Constants"
-import Image from "next/image"
-import Link from "next/link"
-
-type FooterColumnProps = {
-  title: string;
-  children: React.ReactNode;
-}
-
-const FooterColumn = ({ title, children }: FooterColumnProps) => {
-  return (
-    <div className="flex flex-col gap-5">
-      <h4 className="bold-18 whitespace-nowrap">{title}</h4>
-      {children}
-    </div>
-  )
-}
+import { FOOTER_CONTACT_INFO, SOCIALS } from '@/Constants';
+import Image from 'next/image';
+import Link from 'next/link';
+import YandexMap from '@/components/YandexMap';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="flexCenter mb-24">
-      <div className="padding-container max-container flex w-full
-      flex-col gap-14">
-        <div className="flex flex-col items-start justify-center 
-        gap-[10%] md:flex-row">
-          <Link href="/" className="mb-10">
-            <Image src="/nexthotellogo.svg" alt="logo" width={200} height={80} />
-          </Link>
+      <div className="padding-container max-container flex w-full flex-col gap-16 px-8 md:px-16 lg:px-24">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-center">
+          {/* Левая колонка с контактной информацией */}
+          <div className="flex-1 flex flex-col gap-10">
+            <h3 className="bold-40 mb-6">Наши контакты</h3>
 
-          <div className="flex flex-wrap gap-10 sm:justify-between
-          md:flex-1">
-            {FOOTER_LINKS.map((columns) => (
-              <FooterColumn title={columns.title}>
-                  <ul className="regular-14 flex flex-col gap-4
-                  text-gray-30">
-                    {columns.links.map((link) => (
-                      <Link href="/" key={link}>
-                        {link}
-                      </Link>
-                    ))}
-                  </ul>
-              </FooterColumn>
-            ))}
-
-            <div className="flex flex-col gap-5">
-              <FooterColumn title={FOOTER_CONTACT_INFO.title}>
-                {FOOTER_CONTACT_INFO.links.map((link) => (
-                  <Link
-                    href="/"
-                    key={link.label}
-                    className="flex gap-4 md:flex-col lg:flex-row"
-                  >
-                    <p className="whitespace-nowrap">
-                      {link.label}
-                    </p>
-                    <p className="medium-14 whitespace-nowrap
-                    text-blue-70">
-                      {link.value}
-                    </p>
+            {/* Контактная информация */}
+            <div>
+              <div className="flex flex-col gap-4">
+                {FOOTER_CONTACT_INFO.links.map((link, index) => (
+                  <Link href="/" key={`contact-link-${index}`} className="flex justify-between">
+                    <p className="whitespace-nowrap medium-14">{link.label}</p>
+                    <p>{link.value}</p>
                   </Link>
                 ))}
-              </FooterColumn>
+              </div>
             </div>
 
-            <div className="flex flex-col gap-5">
-              <FooterColumn title={SOCIALS.title}>
-                <ul className="regular-14 flex gap-4 text-gray-30">
-                  {SOCIALS.links.map((link) => (
-                    <Link href="/" key={link}>
-                      <Image src={link} alt="logo" width={24} height={24} />
+            {/* Социальные сети */}
+            <div>
+              <h4 className="bold-18 mb-4">{SOCIALS.title}</h4>
+              <ul className="flex gap-4">
+                {SOCIALS.links.map((link, index) => (
+                  <li key={`social-link-${index}`}>
+                    <Link href="/">
+                      <Image src={link} alt="social logo" width={24} height={24} />
                     </Link>
-                  ))}
-                </ul>
-              </FooterColumn>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Правая колонка с Яндекс.Картами */}
+          <div className="flex-1">
+            <div className="lg:ml-8 mg-2">
+              <YandexMap />
             </div>
           </div>
         </div>
 
         <div className="border bg-gray-20" />
-        <p className="regular-14 w-full text-center text-gray-30">2024 Next Hotel | Powered by NextJS 14 </p>
+        <p className="regular-14 w-full text-center text-gray-30">
+          {currentYear} "Тихий" хостел | Powered by NextJS 14
+        </p>
       </div>
     </footer>
-    )
-}
+  );
+};
 
-export default Footer
+export default Footer;
