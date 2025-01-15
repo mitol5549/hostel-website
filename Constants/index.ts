@@ -7,6 +7,33 @@ export const NAV_LINKS = [
   { href: '#contact_us', key: 'contact_us', label: 'Контакты' },
 ];
 
+export const rooms = [
+  {
+    id: 1,
+    image: '/img-1.png',
+    title: 'Одноместный номер',
+    description: 'Уютный номер для одного гостя с всеми удобствами',
+    price: 1500,
+    capacity: 1,
+  },
+  {
+    id: 2,
+    image: '/img-2.png',
+    title: 'Двухместный номер',
+    description: 'Просторный номер с двумя кроватями',
+    price: 2500,
+    capacity: 2,
+  },
+  {
+    id: 3,
+    image: '/img-3.png',
+    title: 'Общий номер',
+    description: 'Общий номер на 10 человек с индивидуальными шкафчиками',
+    price: 800,
+    capacity: 10,
+  },
+];
+
 // CAMP SECTION
 export const PEOPLE_URL = ['/person-1.png', '/person-2.png', '/person-3.png', '/person-4.png'];
 

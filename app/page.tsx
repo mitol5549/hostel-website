@@ -2,6 +2,7 @@ import Camp from '@/components/Camp';
 import Features from '@/components/Features';
 import Guide from '@/components/Guide';
 import Hero from '@/components/Hero';
+import RoomList from '@/components/RoomList';
 import Image from 'next/image';
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
           <Hero />
         </div>
       </div>
+      <RoomList />
       <Guide />
       <Features />
       <Camp />
