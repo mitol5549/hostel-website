@@ -1,86 +1,101 @@
 // NAVIGATION
 export const NAV_LINKS = [
-    { href: '/', key: 'home', label: 'Home' },
-    { href: '/', key: 'how_nexthotel_work', label: 'Meet Next Hotel' },
-    { href: '/', key: 'services', label: 'Services' },
-    { href: '/', key: 'pricing ', label: 'Pricing ' },
-    { href: '/', key: 'contact_us', label: 'Contact Us' },
-  ];
-  
-  // CAMP SECTION
-  export const PEOPLE_URL = [
-    '/person-1.png',
-    '/person-2.png',
-    '/person-3.png',
-    '/person-4.png',
-  ];
-  
-  // FEATURES SECTION
-  export const FEATURES = [
-    {
-      title: 'Find Hotels on the Map Anytime',
-      icon: '/map.svg',
-      variant: 'green',
-      description:
-        'Discover hotels through our map feature. Our app offers a solution for you to use it seamlessly while traveling, with offline maps available anytime, even in locations with no signal.',
-    },
-    {
-      title: 'Plan Your Adventure',
-      icon: '/calendar.svg',
-      variant: 'green',
-      description:
-        'Coordinate an adventure with friends and enjoy exciting holiday offers from Next Hotel. No more debates, just easy planning for unforgettable experiences.',
-    },
-    {
-      title: 'Automated Booking and AR Guide',
-      icon: '/tech.svg',
-      variant: 'green',
-      description:
-        'Sit back and unwind as Next Hotel\'s cutting-edge technology takes care of your hotel bookings and tour reservations seamlessly. Our advanced system ensures you enjoy hassle-free travel, securing top-notch accommodations with just a click.',
-    },
-    {
-      title: 'Daily Tour Highlights',
-      icon: '/location.svg',
-      variant: 'orange',
-      description:
-        'Embark on a daily adventure with us as we unveil fresh and thrilling tourist destinations, handpicked by our global community of travelers. Immerse yourself in the recommendations of those who have explored the world and let each day be a new opportunity for exciting discoveries.',
-    },
-  ];
-  
-  // FOOTER SECTION
-  export const FOOTER_LINKS = [
-    {
-      title: 'Learn More',
-      links: [
-        'About Next Hotel',
-        'Press Releases',
-        'Environment',
-        'Jobs',
-        'Privacy Policy',
-        'Contact Us',
-      ],
-    },
-    {
-      title: 'Our Community',
-      links: ['Next Tourist Ride', 'Top Hotels', 'Plan For Me', 'Events', 'Exotic Stays', 'Hounted Hotels'],
-    },
-  ];
-  
-  export const FOOTER_CONTACT_INFO = {
-    title: 'Contact Us',
-    links: [
-      { label: 'Admin Officer', value: '86-134-543-39394' },
-      { label: 'Email Officer', value: 'contact@nexthotel.com' },
-    ],
-  };
-  
-  export const SOCIALS = {
-    title: 'Social',
-    links: [
-      '/facebook.svg',
-      '/instagram.svg',
-      '/twitter.svg',
-      '/youtube.svg',
-      '/wordpress.svg',
-    ],
-  };
+  { href: '#home', key: 'home', label: 'Главная' },
+  { href: '#how_nexthotel_work', key: 'how_nexthotel_work', label: 'О хостеле' },
+  { href: '#services', key: 'services', label: 'Удобства' },
+  { href: '#pricing', key: 'pricing ', label: 'Цены' },
+  { href: '#contact_us', key: 'contact_us', label: 'Контакты' },
+];
+
+// CAMP SECTION
+export const PEOPLE_URL = ['/person-1.png', '/person-2.png', '/person-3.png', '/person-4.png'];
+
+// FEATURES SECTION
+export const FEATURES = [
+  {
+    title: 'Круглосуточная регистрация',
+    icon: '/24-hours.svg',
+    variant: 'green',
+    description: 'Мы работаем 24/7 и поэтому всегда рады гостям в любое время',
+  },
+  {
+    title: 'Беспланый Wi-Fi',
+    icon: '/wi-fi.svg',
+    variant: 'green',
+    description: 'Высокоскоростной интернет на всей территории хостела',
+  },
+  {
+    title: 'Общая кухня',
+    icon: '/kitchen.svg',
+    variant: 'green',
+    description: 'Воспользуйтесь общей кухней со всей необходимой бытовой техникой',
+  },
+  {
+    title: 'Номера для некурящих',
+    icon: '/smoking.svg',
+    variant: 'green',
+    description: 'В нашем хостеле есть отдельные номера только для некурящих',
+  },
+  {
+    title: 'Вызов такси',
+    icon: '/taxi.svg',
+    variant: 'green',
+    description: 'Наши администраторы всегда помогут вызвать такси по низким ценам',
+  },
+  {
+    title: 'Бесплатная парковка',
+    icon: '/parking.svg',
+    variant: 'orange',
+    description: 'Частная парковка на месте (предварительный заказ не требуется)',
+  },
+  {
+    title: 'Можно с питомцами',
+    icon: '/pet.svg',
+    variant: 'green',
+    description: 'Допускается размещение домашних животных по предварительному запросу',
+  },
+  {
+    title: 'Услуга будильника',
+    icon: '/alarm.svg',
+    variant: 'green',
+    description: 'Администратор разбудит вас в условленое время, чтобы вы ничего не проспали',
+  },
+  {
+    title: 'Библиотека',
+    icon: '/library.svg',
+    variant: 'green',
+    description: 'Для тех, кто не может жить без чтения, мы собрали небольшую библиотеку',
+  },
+  {
+    title: 'Настольные игры',
+    icon: '/chess.svg',
+    variant: 'green',
+    description: 'Отличное развлечение для дружной компании, несколько популярных игр на выбор',
+  },
+  {
+    title: 'Гладильная доска, утюг',
+    icon: '/iron.svg',
+    variant: 'green',
+    description: 'Наш утюг и гладильная доска помогут приветси ваши вещи в порядок',
+  },
+  {
+    title: 'Стиральная машинка',
+    icon: '/washing-machine.svg',
+    variant: 'orange',
+    description: 'Можете воспользоваться нашей стиральной машиной',
+  },
+];
+
+export const FOOTER_CONTACT_INFO = {
+  title: 'Наши контакты',
+  links: [
+    { label: 'Адрес', value: '664056, Красноярск, ул. Лермонтова 19' },
+    { label: 'Телефон', value: '+7 (981) 999 19 99' },
+    { label: 'E-Mail', value: 'contact@nexthotel.com' },
+  ],
+};
+
+export const SOCIALS = {
+  title: 'Соцсети и мессенджеры',
+  links: ['/facebook.svg', '/instagram.svg', '/twitter.svg'],
+};
