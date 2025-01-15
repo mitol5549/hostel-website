@@ -49,6 +49,9 @@ module.exports = {
       borderRadius: {
         '5xl': '40px',
       },
+      boxShadow: {
+        lg: '0 4px 6px rgba(0, 0, 0, 0.1)', // Тень при прокрутке
+      },
     },
   },
   plugins: [],
