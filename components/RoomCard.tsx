@@ -1,30 +1,31 @@
-import Image from 'next/image';
+import { Card, CardFooter, CardHeader, Image } from '@heroui/react';
 import Button from './Button';
+import RoomGallery from './RoomGallery';
 
 interface RoomCardProps {
-  image: string;
+  images: string[];
   title: string;
   description: string;
   price: number;
   capacity: number;
 }
 
-const RoomCard: React.FC<RoomCardProps> = ({ image, title, description, price, capacity }) => {
+const RoomCard: React.FC<RoomCardProps> = ({ images, title, description, price, capacity }) => {
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden">
-      <div className="relative h-48 w-full">
-        <Image src={image} alt={title} layout="fill" objectFit="cover" />
-      </div>
-      <div className="p-6">
+    <Card className="w-full h-[300px] col-span-12 sm:col-span-7">
+      <CardHeader className="absolute z-10 top-1 flex-col items-start">
         <h3 className="font-bold text-xl mb-2">{title}</h3>
         <p className="text-gray-600 text-sm mb-4">{description}</p>
+      </CardHeader>
+      <Image removeWrapper alt="room" className="z-0 w-full h-full object-cover" src={images[0]} />
+      <CardFooter>
         <div className="flex justify-between items-center mb-4">
           <span className="text-green-600 font-bold">{price} ₽ / ночь</span>
           <span className="text-gray-500">Вместимость: {capacity} чел.</span>
         </div>
         <Button type="button" title="Забронировать" variant="btn_dark_green" />
-      </div>
-    </div>
+      </CardFooter>
+    </Card>
   );
 };
 
