@@ -10,7 +10,7 @@ export const NAV_LINKS = [
 export const rooms = [
   {
     id: 1,
-    image: '/img-1.png',
+    images: ['/img-1.png', '/img-2.png', '/img-3.png'],
     title: 'Одноместный номер',
     description: 'Уютный номер для одного гостя с всеми удобствами',
     price: 1500,
@@ -18,7 +18,7 @@ export const rooms = [
   },
   {
     id: 2,
-    image: '/img-2.png',
+    images: ['/img-1.png', '/img-2.png', '/img-3.png'],
     title: 'Двухместный номер',
     description: 'Просторный номер с двумя кроватями',
     price: 2500,
@@ -26,7 +26,7 @@ export const rooms = [
   },
   {
     id: 3,
-    image: '/img-3.png',
+    images: ['/img-1.png', '/img-2.png', '/img-3.png'],
     title: 'Общий номер',
     description: 'Общий номер на 10 человек с индивидуальными шкафчиками',
     price: 800,
@@ -46,7 +46,7 @@ export const FEATURES = [
     description: 'Мы работаем 24/7 и поэтому всегда рады гостям в любое время',
   },
   {
-    title: 'Беспланый Wi-Fi',
+    title: 'Бесплатный Wi-Fi',
     icon: '/wi-fi.svg',
     variant: 'green',
     description: 'Высокоскоростной интернет на всей территории хостела',
@@ -116,9 +116,10 @@ export const FEATURES = [
 export const FOOTER_CONTACT_INFO = {
   title: 'Наши контакты',
   links: [
-    { label: 'Адрес', value: '664056, Красноярск, ул. Лермонтова 19' },
-    { label: 'Телефон', value: '+7 (981) 999 19 99' },
-    { label: 'E-Mail', value: 'contact@nexthotel.com' },
+    { label: 'Адрес', value: '660068, Красноярск, пер. Тихий 2' },
+    { label: 'Телефон', value: '+7 (391) 271 21 81' },
+    { label: '', value: '+7 (963) 191 21 81' },
+    { label: 'E-Mail', value: 'info@отельтихий.рф' },
   ],
 };
 
