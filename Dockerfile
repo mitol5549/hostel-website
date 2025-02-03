@@ -34,9 +34,10 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
-EXPOSE 3000
-ENV PORT=3000
+# Изменяем порт на 80
+EXPOSE 80
+ENV PORT=80
 ENV HOSTNAME="0.0.0.0"
 
-# ПРАВИЛЬНЫЙ КОМАНДНЫЙ ФАЙЛ ДЛЯ standalone
+# Запуск Next.js standalone
 CMD ["node", "server.js"]
