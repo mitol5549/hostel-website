@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import Slider from 'react-slick';
-import Image from 'next/image';
-import { Card } from "@heroui/react";
+// import Slider from 'react-slick';
+// import Image from 'next/image';
+// import { Card } from '@heroui/react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -24,13 +24,13 @@ const RoomGallery: React.FC<RoomGalleryProps> = ({ images }) => {
 
   return (
     <div className="relative h-10">
-      <Slider {...settings}>
+      {/* <Slider {...settings}>
         {images.map((image, index) => (
           <Card key={index} className="relative object-cover">
             <Image src={image} alt={`Room ${index + 1}`} width={500} height={100} className="object-cover rounded-sm" />
           </Card>
         ))}
-      </Slider>
+      </Slider> */}
     </div>
   );
 };
