@@ -11,6 +11,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: '#12A150',
         green: {
           50: '#30AF5B',
           90: '#292C27',
@@ -54,6 +55,9 @@ module.exports = {
       },
       boxShadow: {
         lg: '0 4px 6px rgba(0, 0, 0, 0.1)', // Тень при прокрутке
+      },
+      fontFamily: {
+        sofia: ['"Sofia Sans Semi Condensed"', 'sans-serif'],
       },
     },
   },
