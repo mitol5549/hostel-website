@@ -1,6 +1,6 @@
 import { PEOPLE_URL } from '@/Constants';
+import { Button } from '@heroui/react';
 import Image from 'next/image';
-import Button from './Button';
 
 type CampProps = {
   backgroundImage: string;
@@ -94,7 +94,9 @@ const Camp = () => {
           </p>
           <Image src="/quote.svg" alt="quote" width={186} height={219} className="camp-quote" />
           <div className="mt-5">
-            <Button type="button" title="Позвонить" variant="btn_white" />
+            <Button color="default" variant="ghost">
+              Позвонить
+            </Button>
           </div>
         </div>
       </div>
