@@ -1,10 +1,10 @@
 // NAVIGATION
 export const NAV_LINKS = [
   { href: '#home', key: 'home', label: 'Главная' },
-  { href: '#how_nexthotel_work', key: 'how_nexthotel_work', label: 'О хостеле' },
-  { href: '#services', key: 'services', label: 'Удобства' },
-  { href: '#pricing', key: 'pricing ', label: 'Цены' },
-  { href: '#contact_us', key: 'contact_us', label: 'Контакты' },
+  { href: '#rooms', key: 'rooms ', label: 'Номера' },
+  { href: '#features', key: 'features', label: 'Удобства' },
+  { href: '#gallery', key: 'gallery', label: 'Галерея' },
+  { href: '#contacts', key: 'contacts', label: 'Контакты' },
 ];
 
 export const rooms = [
@@ -57,12 +57,12 @@ export const FEATURES = [
     variant: 'green',
     description: 'Воспользуйтесь общей кухней со всей необходимой бытовой техникой',
   },
-  {
-    title: 'Номера для некурящих',
-    icon: '/smoking.svg',
-    variant: 'green',
-    description: 'В нашем хостеле есть отдельные номера только для некурящих',
-  },
+  // {
+  //   title: 'Номера для некурящих',
+  //   icon: '/smoking.svg',
+  //   variant: 'green',
+  //   description: 'В нашем хостеле есть отдельные номера только для некурящих',
+  // },
   {
     title: 'Вызов такси',
     icon: '/taxi.svg',
@@ -75,30 +75,30 @@ export const FEATURES = [
     variant: 'orange',
     description: 'Частная парковка на месте (предварительный заказ не требуется)',
   },
-  {
-    title: 'Можно с питомцами',
-    icon: '/pet.svg',
-    variant: 'green',
-    description: 'Допускается размещение домашних животных по предварительному запросу',
-  },
-  {
-    title: 'Услуга будильника',
-    icon: '/alarm.svg',
-    variant: 'green',
-    description: 'Администратор разбудит вас в условленое время, чтобы вы ничего не проспали',
-  },
-  {
-    title: 'Библиотека',
-    icon: '/library.svg',
-    variant: 'green',
-    description: 'Для тех, кто не может жить без чтения, мы собрали небольшую библиотеку',
-  },
-  {
-    title: 'Настольные игры',
-    icon: '/chess.svg',
-    variant: 'green',
-    description: 'Отличное развлечение для дружной компании, несколько популярных игр на выбор',
-  },
+  // {
+  //   title: 'Можно с питомцами',
+  //   icon: '/pet.svg',
+  //   variant: 'green',
+  //   description: 'Допускается размещение домашних животных по предварительному запросу',
+  // },
+  // {
+  //   title: 'Услуга будильника',
+  //   icon: '/alarm.svg',
+  //   variant: 'green',
+  //   description: 'Администратор разбудит вас в условленое время, чтобы вы ничего не проспали',
+  // },
+  // {
+  //   title: 'Библиотека',
+  //   icon: '/library.svg',
+  //   variant: 'green',
+  //   description: 'Для тех, кто не может жить без чтения, мы собрали небольшую библиотеку',
+  // },
+  // {
+  //   title: 'Настольные игры',
+  //   icon: '/chess.svg',
+  //   variant: 'green',
+  //   description: 'Отличное развлечение для дружной компании, несколько популярных игр на выбор',
+  // },
   {
     title: 'Гладильная доска, утюг',
     icon: '/iron.svg',

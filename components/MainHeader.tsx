@@ -12,24 +12,22 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  // useDisclosure,
-  // Button,
 } from '@heroui/react';
-// import { ModalBooking } from './ModalBooking';
 
 const MainHeader = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Состояние для мобильного меню
-  // const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll isBordered>
-      <NavbarBrand>
-        <Link href="/">
-          <Image src="/tihii-logo.svg" alt="logo" width={1171} height={490} className="w-32 h-auto" />
-        </Link>
-      </NavbarBrand>
+    <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} isBordered>
+      <NavbarContent justify="start">
+        <NavbarBrand className="justify-start">
+          <Link href="/">
+            <Image src="/tihii-logo.svg" alt="logo" width={1171} height={490} className="w-32 h-auto" />
+          </Link>
+        </NavbarBrand>
+      </NavbarContent>
 
-      <NavbarContent justify="center" className="gap-4 hidden md:flex">
+      <NavbarContent justify="end" className="gap-12 hidden md:flex">
         {NAV_LINKS.map(link => (
           <NavbarItem key={link.key}>
             <Link
@@ -42,18 +40,11 @@ const MainHeader = () => {
         ))}
       </NavbarContent>
 
-      <NavbarContent justify="end">
-        {/* <NavbarItem className="gap-12 hidden md:flex">
-          <Button color="primary" onPress={onOpen}>
-            Забронировать
-          </Button>
-          <ModalBooking isOpen={isOpen} onClose={onOpenChange} />
-        </NavbarItem> */}
+      <NavbarContent justify="end" className="md:hidden">
         <NavbarMenuToggle aria-label={isMenuOpen ? 'Close menu' : 'Open menu'} className="md:hidden" />
       </NavbarContent>
 
       {/* Mobile Menu */}
-
       <NavbarMenu>
         {NAV_LINKS.map(link => (
           <NavbarMenuItem key={link.key}>
@@ -65,10 +56,6 @@ const MainHeader = () => {
             </Link>
           </NavbarMenuItem>
         ))}
-
-        {/* <NavbarMenuItem className="w-full flexCenter md:hidden">
-          <ModalBooking isOpen={isOpen} onClose={onOpenChange} />
-        </NavbarMenuItem> */}
       </NavbarMenu>
     </Navbar>
   );

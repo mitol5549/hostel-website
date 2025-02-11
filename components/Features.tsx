@@ -30,24 +30,21 @@ const FeatureItem = ({ title, icon, description }: FeatureItemProps) => {
 const Features = () => {
   return (
     <section
-      className="flex-col flexCenter
+      id="features"
+      className=" max-container md:padding-container px-10 flex-col flexCenter
     overflow-hidden py-24"
     >
       <div
-        className="max-container padding-container relative w-full 
-      flex justify-end"
+        className="max-w-[942px] px-auto relative w-full 
+      flex justify-between"
       >
-        <div className="flex flex-1 lg:min-h-[900px]">
-          <Image src="/places.png" alt="places" width={640} height={1000} className="feature-phone" />
-        </div>
-
-        <div className="z-20 flex w-full flex-col lg:w-[60%] ">
+        <div className="z-20 flex w-full flex-col">
           <div className="relative">
             <h2 className="bold-40 lg:bold-64 bg-white/80">Удобства для комфортного проживания</h2>
           </div>
 
           <ul
-            className="mt-10 grid gap-10 md:grid-cols-2 
+            className="mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3
           lg:mg-20 lg:gap-20"
           >
             {FEATURES.map(feature => (

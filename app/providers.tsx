@@ -27,7 +27,11 @@ export function Providers({ children }: { children: React.ReactNode }) {
                   },
                   // Задаем настройки второстепенных кнопок
                   secondary: {
-                    bg: '#f5f9ba',
+                    bg: '#289446',
+                    hoverBg: '#34ad55',
+                    textColor: '#fff',
+                    borderColor: '#289446',
+                    hoverBorderColor: '#34ad55',
                   },
                 },
               },
@@ -40,14 +44,12 @@ export function Providers({ children }: { children: React.ReactNode }) {
                 },
               },
               roomsList: {
-                container: {
-                  // bg: '#fff',
-                },
-                gap: '10px',
+                itemBorder: '20px solid #f3f4f6',
                 item: {
                   bg: '#fff',
-                  borderRadius: '30px',
-                  padding: '20px',
+                  border: '1px solid #d7d7d7',
+                  borderRadius: '10px',
+                  padding: '30px',
                 },
               },
             },
@@ -87,7 +89,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
             appearance: {
               container: 'WidgetRoomsListId',
             },
-            theme: {},
           });
 
           window.HotelWidget?.add({

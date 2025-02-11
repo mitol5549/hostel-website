@@ -8,7 +8,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="flexCenter mb-24">
+    <footer id="contacts" className="flexCenter mb-24">
       <div className="padding-container max-container flex w-full flex-col gap-16 px-8 md:px-16 lg:px-24">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-center">
           {/* Левая колонка с контактной информацией */}

@@ -1,6 +1,6 @@
 'use client';
 
-import Camp from '@/components/Camp';
+import Gallery from '@/components/Gallery';
 import Features from '@/components/Features';
 import Hero from '@/components/Hero';
 import RoomList from '@/components/RoomList';
@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <>
-      <div className="relative h-screen">
+      <div className="relative h-[calc(100vh-4rem)]">
         <Image
           src="/hero-back.png"
           alt="Hero Background"
@@ -25,7 +25,7 @@ export default function Home() {
       </div>
       <RoomList />
       <Features />
-      <Camp />
+      <Gallery />
       <div id="WidgetShowCheckAvailabilityButtonForMobileDevicesId" />
     </>
   );

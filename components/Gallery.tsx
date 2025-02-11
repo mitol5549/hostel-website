@@ -9,7 +9,7 @@ type CampProps = {
   peopleJoined: string;
 };
 
-const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }: CampProps) => {
+const GalleryItem = ({ backgroundImage, title, subtitle, peopleJoined }: CampProps) => {
   return (
     <div
       className={`h-full w-full min-w-[1100px] ${backgroundImage}
@@ -49,9 +49,10 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }: CampProps)
   );
 };
 
-const Camp = () => {
+const Gallery = () => {
   return (
     <section
+      id="gallery"
       className="2xl:max-container relative flex flex-col py-10 
     lg:mb-10 lg:py-20 xl:mb-20"
     >
@@ -59,19 +60,19 @@ const Camp = () => {
         className="hide-scrollbar flex h-[340px] w-full items-start
       justify-start gap-8 overflow-x-auto lg:h-[400px] xl:h-[640px]"
       >
-        <CampSite
+        <GalleryItem
           backgroundImage="bg-bg-img-2"
           title="Одноместный номер"
           subtitle="Индивидуальный одноместный номер стандарт"
           peopleJoined="40+ Бронирований"
         />
-        <CampSite
+        <GalleryItem
           backgroundImage="bg-bg-img-1"
           title="Двухместный номер с раздельными кроватями"
           subtitle="Индивидуальный двухместный номер с раздельными кроватями стандарт"
           peopleJoined="50+ Бронирований"
         />
-        <CampSite
+        <GalleryItem
           backgroundImage="bg-bg-img-3"
           title="Номер на 10 мест"
           subtitle="Общий десятиместный номер"
@@ -94,7 +95,7 @@ const Camp = () => {
           </p>
           <Image src="/quote.svg" alt="quote" width={186} height={219} className="camp-quote" />
           <div className="mt-5">
-            <Button color="default" variant="ghost">
+            <Button className="text-green-600 bg-white hover:bg-green-600 hover:text-white hover:border-s-white" variant="solid">
               Позвонить
             </Button>
           </div>
@@ -104,4 +105,4 @@ const Camp = () => {
   );
 };
 
-export default Camp;
+export default Gallery;
