@@ -35,14 +35,6 @@ module.exports = {
           50: '#FEC601',
         },
       },
-      backgroundImage: {
-        'bg-img-1': "url('/img-1.png')",
-        'bg-img-2': "url('/img-2.png')",
-        'bg-img-3': "url('/img-3.png')",
-        'feature-bg': "url('/feature-bg.png')",
-        pattern: "url('/pattern.png')",
-        'pattern-2': "url('/pattern-bg.png')",
-      },
       screens: {
         xs: '400px',
         '3xl': '1680px',
@@ -56,6 +48,13 @@ module.exports = {
       },
       boxShadow: {
         lg: '0 4px 6px rgba(0, 0, 0, 0.1)', // Тень при прокрутке
+      },
+      spacing: {
+        'slide-spacing': '1rem',
+        'slide-height': '19rem',
+      },
+      width: {
+        'slide-size': '80%',
       },
       fontFamily: {
         sofia: ['"Sofia Sans Semi Condensed"', 'sans-serif'],
