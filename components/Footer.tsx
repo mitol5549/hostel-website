@@ -1,8 +1,8 @@
-import { FOOTER_CONTACT_INFO, SOCIALS } from '@/Constants';
-import Image from 'next/image';
+import { FOOTER_CONTACT_INFO } from '@/Constants';
 import Link from 'next/link';
 import YandexMap from '@/components/YandexMap';
-import { Divider } from '@heroui/react';
+import { Button, Divider } from '@heroui/react';
+import Image from 'next/image';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,15 +29,21 @@ const Footer = () => {
 
             {/* Социальные сети */}
             <div>
-              <h4 className="bold-18 mb-4">{SOCIALS.title}</h4>
+              <h4 className="bold-18 mb-4">Соцсети и мессенджеры</h4>
               <ul className="flex gap-4">
-                {SOCIALS.links.map((link, index) => (
-                  <li key={`social-link-${index}`}>
-                    <Link href="/">
-                      <Image src={link} alt="social logo" width={24} height={24} />
-                    </Link>
-                  </li>
-                ))}
+                <li key={"What'sApp"}>
+                  <Button
+                    isIconOnly
+                    as={Link}
+                    color="primary"
+                    href="https://wa.me/79059719037"
+                    target="_blank"
+                    variant="light"
+                    aria-label="What's App"
+                  >
+                    <Image src="/whatsapp.svg" alt="What's App" width={48} height={48} />
+                  </Button>
+                </li>
               </ul>
             </div>
           </div>
