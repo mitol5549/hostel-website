@@ -23,9 +23,9 @@ export default function Home() {
           <Hero />
         </div>
       </div>
+      <Gallery />
       <RoomList />
       <Features />
-      <Gallery />
       <div id="WidgetShowCheckAvailabilityButtonForMobileDevicesId" />
     </>
   );

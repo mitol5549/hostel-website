@@ -12,9 +12,9 @@ const Gallery = () => {
       className="2xl:max-container relative flex flex-col py-10 
     lg:mb-10 lg:py-20 xl:mb-20"
     >
-      <div className="relative">
-        <h2 className="bold-40 lg:bold-64 bg-white/80">Фотогалерея</h2>
-      </div>
+      <div className="relative flex justify-center py-10">
+          <h2 className="bold-40 lg:bold-64">Фотогалерея</h2>
+        </div>
       <EmblaCarousel slides={SLIDES} options={OPTIONS} />
     </section>
   );
