@@ -58,6 +58,8 @@ module.exports = {
       },
       fontFamily: {
         sofia: ['"Sofia Sans Semi Condensed"', 'sans-serif'],
+        heading: ['var(--font-montserrat)', 'Helvetica', 'sans-serif'],
+        body: ['Helvetica', 'Arial', 'sans-serif'],
       },
     },
   },

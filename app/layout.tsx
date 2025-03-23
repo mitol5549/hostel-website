@@ -1,13 +1,24 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import { Montserrat } from 'next/font/google';
+
 import MainHeader from '@/components/MainHeader';
 import Footer from '@/components/Footer';
-import Head from 'next/head';
 import { Providers } from './providers';
+
+import './globals.css';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  weight: ['400', '500', '600', '700'],
+});
 
 export const metadata: Metadata = {
   title: 'Хостел Тихий',
-  description: 'Hotel Review UI/UX App',
+  description: 'Хостел "Тихий" в Красноярске',
+  icons: {
+    icon: '/x-logo.svg',
+  },
 };
 
 export default function RootLayout({
@@ -16,14 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className="scroll-smooth">
-      <Head>
-        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-      </Head>
+    <html lang='ru' className={`scroll-smooth ${montserrat.variable}`}>
       <body>
         <Providers>
           <MainHeader />
-          <main className="relative overflow-hidden">{children}</main>
+          <main className='relative overflow-hidden'>{children}</main>
           <Footer />
         </Providers>
       </body>
