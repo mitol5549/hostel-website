@@ -59,15 +59,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
               onBooking: (v: any) => console.log('onBooking', v),
             },
           });
-
-          window.HotelWidget?.add({
-            type: 'bookingForm',
-            inline: false,
-            appearance: {
-              container: 'WidgetVerticalBlockId',
-            },
-          });
-
+          
           window.HotelWidget?.add({
             type: 'bookingForm',
             inline: true,
