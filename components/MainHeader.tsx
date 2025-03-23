@@ -49,6 +49,9 @@ const MainHeader = () => {
         {NAV_LINKS.map(link => (
           <NavbarMenuItem key={link.key}>
             <Link
+              onPress={() => {
+                setTimeout(() => setIsMenuOpen(false), 50); // небольшая задержка перед закрытием меню
+              }}
               href={link.href}
               className="w-full regular-15 text-gray-700 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
             >
