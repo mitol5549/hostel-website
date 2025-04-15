@@ -8,7 +8,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <HeroUIProvider>
       {children}
       <Script
-        src="https://bookonline24.ru/widget.js"
+        src='https://bookonline24.ru/widget.js'
         onLoad={() => {
           window.HotelWidget?.init({
             hotelId: 'e2877d32-3e03-4011-926a-79404e1b490a',
@@ -59,7 +59,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
               onBooking: (v: any) => console.log('onBooking', v),
             },
           });
-          
+
           window.HotelWidget?.add({
             type: 'bookingForm',
             inline: true,

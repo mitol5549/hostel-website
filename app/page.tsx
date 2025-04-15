@@ -9,24 +9,24 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <>
-      <div className="relative h-[calc(100vh-4rem)]">
+      <div className='relative h-[calc(100vh-4rem)]'>
         <Image
-          src="/hero-back.png"
-          alt="Hero Background"
+          src='/hero-back.png'
+          alt='Hero Background'
           fill
           style={{ objectFit: 'cover' }}
           quality={100}
           priority
-          className="z-0"
+          className='z-0'
         />
-        <div className="relative z-20">
+        <div className='relative z-20'>
           <Hero />
         </div>
       </div>
       <Gallery />
       <RoomList />
       <Features />
-      <div id="WidgetShowCheckAvailabilityButtonForMobileDevicesId" />
+      <div id='WidgetShowCheckAvailabilityButtonForMobileDevicesId' />
     </>
   );
 }
