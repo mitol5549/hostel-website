@@ -34,7 +34,7 @@ const YandexMap = () => {
 
           ymaps.ready(() => {
             const map = new ymaps.Map(mapContainerRef.current, {
-              center: [56.010563, 92.852572], // Координаты Красноярска
+              center: [56.009673, 92.951413], // Координаты Красноярска
               zoom: 10, // Уровень масштабирования
               controls: [], // Убираем все элементы управления, включая зум
             });
@@ -44,9 +44,9 @@ const YandexMap = () => {
 
             // Добавляем маркер
             const placemark = new ymaps.Placemark(
-              [56.010563, 92.852572], // Координаты маркера
+              [56.009673, 92.951413], // Координаты маркера
               {
-                balloonContent: 'Красноярск, Россия', // Подсказка при клике на маркер
+                balloonContent: 'Хостел "Тихий"', // Подсказка при клике на маркер
               },
               {
                 preset: 'islands#greenIcon', // Тёмно-зелёный цвет
@@ -58,7 +58,7 @@ const YandexMap = () => {
           });
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.error('Error loading Yandex Maps script', error);
       });
   }, [ymapsLoaded]);
@@ -66,7 +66,7 @@ const YandexMap = () => {
   return (
     <div
       ref={mapContainerRef}
-      className="w-full h-[500px] rounded-lg shadow-lg" // Стили для карты с помощью Tailwind
+      className='w-full h-[500px] rounded-lg shadow-lg' // Стили для карты с помощью Tailwind
     />
   );
 };
