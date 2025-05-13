@@ -7,6 +7,32 @@ export const NAV_LINKS = [
   { href: '#contacts', key: 'contacts', label: 'Контакты' },
 ];
 
+// HERO SECTION
+export const HERO = {
+  image: {
+    src: '/hero-back.png',
+    alt: 'Хостел "Тихий" - комфортное проживание в центре Красноярска',
+  },
+  logo: {
+    src: '/tihii-logo.svg',
+    alt: 'Логотип хостела Тихий',
+    width: 1171,
+    height: 490,
+  },
+  description:
+    'Хостел «Тихий» предлагает комфортное размещение для путешественников и деловых людей. Мы находимся в центре города, недалеко от основных достопримечательностей и транспортных узлов. Наш хостел - это идеальное сочетание комфорта, доступности и удобного расположения.',
+  info: {
+    location: 'Красноярск, Россия',
+    distance: '0.5 км',
+    roomsCount: 9,
+  },
+};
+
+// LAYOUT
+export const LAYOUT = {
+  heroHeight: 'calc(100vh-4rem)',
+};
+
 // FEATURES SECTION
 export const FEATURES = [
   {
@@ -53,12 +79,33 @@ export const FEATURES = [
   },
 ];
 
-export const FOOTER_CONTACT_INFO = {
+// CONTACTS SECTION
+export const CONTACTS = {
   title: 'Наши контакты',
-  links: [
-    { label: 'Адрес', value: '660068, Красноярск, пер. Тихий 2' },
-    { label: 'Телефон', value: '+7 (391) 271 21 81' },
-    { label: '', value: '+7 (963) 191 21 81' },
-    { label: 'E-Mail', value: 'hostel@profrezerv.pro' },
+  info: {
+    links: [
+      { label: 'Адрес', value: '660068, Красноярск, пер. Тихий 2' },
+      { label: 'Телефон', value: '+7 (391) 271 21 81' },
+      { label: '', value: '+7 (963) 191 21 81' },
+      { label: 'E-Mail', value: 'hostel@profrezerv.pro' },
+    ],
+  },
+  social: [
+    {
+      name: "What's App",
+      url: 'https://wa.me/79059719037',
+      icon: '/whatsapp.svg',
+    },
   ],
+};
+
+// GALLERY SECTION
+export const GALLERY = {
+  title: 'Фотогалерея',
+  slideCount: 6,
+  options: {
+    align: 'start' as const,
+    dragFree: true,
+    loop: true,
+  },
 };
