@@ -3,10 +3,13 @@
 import { HeroUIProvider } from '@heroui/react';
 import Script from 'next/script';
 
+import { WelcomePopup } from '@/components/common/WelcomePopup';
+
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <HeroUIProvider>
       {children}
+      <WelcomePopup />
       <Script
         src='https://bookonline24.ru/widget.js'
         onLoad={() => {
