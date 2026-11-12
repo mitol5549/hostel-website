@@ -2,7 +2,8 @@
 export const NAV_LINKS = [
   { href: '#home', key: 'home', label: 'Главная' },
   { href: '#gallery', key: 'gallery', label: 'Галерея' },
-  { href: '#rooms', key: 'rooms ', label: 'Номера' },
+  // Временно скрыто до восстановления виджета BookOnline24.
+  // { href: '#rooms', key: 'rooms ', label: 'Номера' },
   { href: '#features', key: 'features', label: 'Удобства' },
   { href: '#contacts', key: 'contacts', label: 'Контакты' },
 ];
@@ -84,13 +85,31 @@ export const CONTACTS = {
   title: 'Наши контакты',
   info: {
     links: [
-      { label: 'Адрес', value: '660068, Красноярск, пер. Тихий 2' },
-      { label: 'Телефон', value: '+7 (391) 271 21 81' },
-      { label: '', value: '+7 (963) 191 21 81' },
-      { label: 'E-Mail', value: 'hostel@profrezerv.pro' },
+      {
+        label: 'Адрес',
+        value: '660068, Красноярск, пер. Тихий 2',
+        href: `https://yandex.ru/maps/?text=${encodeURIComponent('Красноярск, переулок Тихий, 2')}`,
+        openInNewTab: true,
+      },
+      {
+        label: 'Телефон',
+        value: '+7 (905) 971 90 37',
+        href: 'tel:+79059719037',
+      },
+      {
+        label: 'E-Mail',
+        value: 'hostel@profrezerv.pro',
+        href: 'mailto:hostel@profrezerv.pro',
+      },
     ],
   },
   social: [
+    {
+      name: 'MAX',
+      url: 'https://max.ru/u/f9LHodD0cOJu06eNEvhx__e1cchr7BV9KkK6uPCf-MxXbkGT0_U3F1rNr7g',
+      icon: '/max.svg',
+      iconSize: 32,
+    },
     {
       name: "What's App",
       url: 'https://wa.me/79059719037',

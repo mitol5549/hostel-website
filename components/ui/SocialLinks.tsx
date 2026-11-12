@@ -7,6 +7,7 @@ interface SocialLink {
   name: string;
   url: string;
   icon: string;
+  iconSize?: number;
 }
 
 interface SocialLinksProps {
@@ -29,7 +30,12 @@ export const SocialLinks: FC<SocialLinksProps> = ({ links }) => {
               variant='light'
               aria-label={link.name}
             >
-              <Image src={link.icon} alt={link.name} width={48} height={48} />
+              <Image
+                src={link.icon}
+                alt={link.name}
+                width={link.iconSize ?? 48}
+                height={link.iconSize ?? 48}
+              />
             </Button>
           </li>
         ))}

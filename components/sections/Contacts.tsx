@@ -6,7 +6,7 @@ import { SocialLinks } from '@/components/ui/SocialLinks';
 
 const Contacts: FC = () => {
   return (
-    <section id='contacts' className='py-12 bg-gray-100 md:padding-container px-10'>
+    <section id='contacts' className='py-12 bg-white md:padding-container px-10'>
       <div className='max-w-[942px] mx-auto'>
         <div className='relative flex justify-center pb-10'>
           <h2 className='bold-40 lg:bold-64'>{CONTACTS.title}</h2>

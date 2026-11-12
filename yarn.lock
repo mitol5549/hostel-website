@@ -2701,9 +2701,9 @@ camelcase-css@^2.0.1:
   integrity sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==
 
 caniuse-lite@^1.0.30001579, caniuse-lite@^1.0.30001688, caniuse-lite@^1.0.30001702:
-  version "1.0.30001707"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001707.tgz#c5e104d199e6f4355a898fcd995a066c7eb9bf41"
-  integrity sha512-3qtRjw/HQSMlDWf+X79N206fepf4SOOU6SQLMaq/0KkZLmSjPxAkBOQQ+FxbHKfHmYLZFfdWsO3KA90ceHPSnw==
+  version "1.0.30001826"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001826.tgz"
+  integrity sha512-wTB+9tIbLro/BCXwLuNV1meHE4L9dS6dArMDwgYfNBPMYScqClHyGunhkCSDtHhe/69Xl0sHlKgBVZ+fNsYtWA==
 
 chokidar@^3.6.0:
   version "3.6.0"
