@@ -14,9 +14,9 @@ export const FeatureItem: FC<FeatureItemProps> = ({ title, icon, description }) 
         <div className='rounded-full p-4 lg:p-7 bg-green-600'>
           <Image src={icon} alt={title} width={38} height={38} />
         </div>
-        <h2 className='bold-20 lg:bold-32 mt-5 bg-white/80'>{title}</h2>
+        <h2 className='bold-20 lg:bold-32 mt-5'>{title}</h2>
         <p
-          className='regular-16 mt-5 bg-white/80 text-gray-30
+          className='regular-16 mt-5 text-gray-30
         lg:mt-[30px] lg:bg-none'
         >
           {description}

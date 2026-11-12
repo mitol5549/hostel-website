@@ -1,7 +1,7 @@
 'use client';
 
 import { HeroUIProvider } from '@heroui/react';
-import Script from 'next/script';
+// import Script from 'next/script';
 
 import { WelcomePopup } from '@/components/common/WelcomePopup';
 
@@ -10,6 +10,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <HeroUIProvider>
       {children}
       <WelcomePopup />
+      {/* Временно отключено до восстановления доступа к BookOnline24.
       <Script
         src='https://bookonline24.ru/widget.js'
         onLoad={() => {
@@ -102,6 +103,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           });
         }}
       />
+      */}
     </HeroUIProvider>
   );
 }

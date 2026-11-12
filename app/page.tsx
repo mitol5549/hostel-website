@@ -3,7 +3,7 @@
 import Gallery from '@/components/sections/Gallery';
 import Features from '@/components/sections/Features';
 import Hero from '@/components/sections/Hero';
-import RoomList from '@/components/sections/RoomList';
+// import RoomList from '@/components/sections/RoomList';
 import Footer from '@/components/layout/Footer';
 import Contacts from '@/components/sections/Contacts';
 import { Divider } from '@heroui/react';
@@ -21,12 +21,14 @@ const Home: FC = () => {
         </div>
       </div>
       <Gallery />
+      {/* Временно скрыто до восстановления виджета BookOnline24.
       <RoomList />
+      */}
       <Features />
       <Contacts />
       <Divider />
       <Footer />
-      <div id='WidgetShowCheckAvailabilityButtonForMobileDevicesId' />
+      {/* <div id='WidgetShowCheckAvailabilityButtonForMobileDevicesId' /> */}
     </>
   );
 };

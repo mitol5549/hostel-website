@@ -6,7 +6,7 @@ const Features: FC = () => {
   return (
     <section
       id='features'
-      className='max-container md:padding-container px-10 flex-col flexCenter
+      className='bg-gray-100 md:padding-container px-10 flex-col flexCenter
     overflow-hidden py-24'
     >
       <div
@@ -15,7 +15,7 @@ const Features: FC = () => {
       >
         <div className='z-20 flex w-full flex-col'>
           <div className='relative'>
-            <h2 className='bold-40 lg:bold-64 bg-white/80'>Удобства для комфортного проживания</h2>
+            <h2 className='bold-40 lg:bold-64'>Удобства для комфортного проживания</h2>
           </div>
 
           <ul

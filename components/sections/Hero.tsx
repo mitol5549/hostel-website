@@ -34,9 +34,11 @@ const Hero: FC = () => {
         </div>
       </div>
 
+      {/* Временно скрыто до восстановления виджета BookOnline24.
       <div className='w-full flex justify-center'>
         <div id='WidgetHorizontalBlockId' />
       </div>
+      */}
     </section>
   );
 };
