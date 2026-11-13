@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithRef, useCallback, useEffect, useState } from 'react';
+import React, { ComponentPropsWithRef, useCallback, useSyncExternalStore } from 'react';
 import { EmblaCarouselType } from 'embla-carousel';
 
 type UsePrevNextButtonsType = {
@@ -12,8 +12,17 @@ export const usePrevNextButtons = (
   emblaApi: EmblaCarouselType | undefined,
   onButtonClick?: (emblaApi: EmblaCarouselType) => void,
 ): UsePrevNextButtonsType => {
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
+  const subscribe = useCallback((onChange: () => void) => {
+    if (!emblaApi) return () => {};
+    emblaApi.on('select', onChange).on('reInit', onChange);
+    return () => {
+      emblaApi.off('select', onChange).off('reInit', onChange);
+    };
+  }, [emblaApi]);
+  const getSnapshot = useCallback(() => (
+    (emblaApi?.canScrollPrev() ? 1 : 0) | (emblaApi?.canScrollNext() ? 2 : 0)
+  ), [emblaApi]);
+  const scrollState = useSyncExternalStore(subscribe, getSnapshot, () => 0);
 
   const onPrevButtonClick = useCallback(() => {
     if (!emblaApi) return;
@@ -27,20 +36,9 @@ export const usePrevNextButtons = (
     if (onButtonClick) onButtonClick(emblaApi);
   }, [emblaApi, onButtonClick]);
 
-  const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
-  }, []);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect(emblaApi);
-    emblaApi.on('reInit', onSelect).on('select', onSelect);
-  }, [emblaApi, onSelect]);
-
   return {
-    prevBtnDisabled,
-    nextBtnDisabled,
+    prevBtnDisabled: !(scrollState & 1),
+    nextBtnDisabled: !(scrollState & 2),
     onPrevButtonClick,
     onNextButtonClick,
   };

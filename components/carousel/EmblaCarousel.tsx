@@ -4,6 +4,7 @@ import { DotButton, useDotButton } from './EmblaCarouselDotButton';
 import { PrevButton, NextButton, usePrevNextButtons } from './EmblaCarouselArrowButtons';
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
+import Image from 'next/image';
 
 type PropType = {
   slides: number[];
@@ -27,16 +28,20 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   );
 
   return (
-    <section className="max-w-4xl mx-auto">
+    <section className="w-full max-w-4xl mx-auto">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex -ml-4">
           {slides.map(index => (
             <div key={index} className="flex-none w-[80%] h-[500px] pl-4">
-              <img
-                className="w-full h-[500px] object-cover rounded-lg shadow-lg"
-                src={`/photo-${index + 1}.jpg`}
-                alt={`Slide ${index + 1}`}
-              />
+              <div className='relative h-full w-full'>
+                <Image
+                  className='object-cover rounded-lg shadow-lg'
+                  src={`/photo-${index + 1}.jpg`}
+                  alt={`Slide ${index + 1}`}
+                  fill
+                  sizes='(max-width: 1120px) 80vw, 720px'
+                />
+              </div>
             </div>
           ))}
         </div>

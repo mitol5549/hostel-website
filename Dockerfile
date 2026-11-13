@@ -1,5 +1,5 @@
 # Используем официальный Node.js образ
-FROM node:18-alpine AS base
+FROM node:24-alpine AS base
 
 # Устанавливаем необходимые зависимости
 FROM base AS deps
@@ -16,7 +16,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# ОГРАНИЧИВАЕМ ПАМЯТЬ ДЛЯ СБОРКИ, чтобы избежать SIGKILL
+# Ограничиваем размер JavaScript heap во время сборки.
 ENV NODE_OPTIONS="--max-old-space-size=512"
 RUN yarn run build
 

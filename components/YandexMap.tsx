@@ -1,73 +1,60 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Script from 'next/script';
+import type { YandexMapInstance } from '@/types/yandex-maps';
 
 const YandexMap = () => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const [ymapsLoaded, setYmapsLoaded] = useState(false);
-
-  // Функция для загрузки скрипта Яндекс.Карт
-  const loadYmapsScript = () => {
-    return new Promise<void>((resolve, reject) => {
-      if (window.ymaps) {
-        resolve();
-        return;
-      }
-
-      const script = document.createElement('script');
-      script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
-      script.async = true;
-      script.onload = () => {
-        setYmapsLoaded(true);
-        resolve();
-      };
-      script.onerror = () => reject(new Error('Failed to load Yandex Maps script'));
-      document.head.appendChild(script);
-    });
-  };
+  const handleApiReady = () => setYmapsLoaded(true);
 
   useEffect(() => {
-    loadYmapsScript()
-      .then(() => {
-        if (ymapsLoaded && mapContainerRef.current) {
-          const ymaps = window.ymaps;
+    const ymaps = window.ymaps;
+    const container = mapContainerRef.current;
+    if (!ymapsLoaded || !ymaps || !container) return;
 
-          ymaps.ready(() => {
-            const map = new ymaps.Map(mapContainerRef.current, {
-              center: [56.009673, 92.951413], // Координаты Красноярска
-              zoom: 10, // Уровень масштабирования
-              controls: [], // Убираем все элементы управления, включая зум
-            });
+    let cancelled = false;
+    let map: YandexMapInstance | undefined;
 
-            // Отключаем масштабирование при скролле
-            map.behaviors.disable('scrollZoom'); // Отключаем масштабирование колесиком
+    ymaps.ready(() => {
+      // Поздний callback API не должен создавать карту после размонтирования.
+      if (cancelled) return;
 
-            // Добавляем маркер
-            const placemark = new ymaps.Placemark(
-              [56.009673, 92.951413], // Координаты маркера
-              {
-                balloonContent: 'Хостел "Тихий"', // Подсказка при клике на маркер
-              },
-              {
-                preset: 'islands#greenIcon', // Тёмно-зелёный цвет
-              },
-            );
-
-            // Размещаем маркер на карте
-            map.geoObjects.add(placemark);
-          });
-        }
-      })
-      .catch((error) => {
-        console.error('Error loading Yandex Maps script', error);
+      map = new ymaps.Map(container, {
+        center: [56.009673, 92.951413],
+        zoom: 10,
+        controls: [],
       });
+
+      map.behaviors.disable('scrollZoom');
+
+      const placemark = new ymaps.Placemark(
+        [56.009673, 92.951413],
+        { balloonContent: 'Хостел "Тихий"' },
+        { preset: 'islands#greenIcon' },
+      );
+      map.geoObjects.add(placemark);
+    });
+
+    return () => {
+      cancelled = true;
+      map?.destroy();
+    };
   }, [ymapsLoaded]);
 
   return (
-    <div
-      ref={mapContainerRef}
-      className='w-full h-[500px] rounded-lg shadow-lg' // Стили для карты с помощью Tailwind
-    />
+    <>
+      <Script
+        id='yandex-maps-api'
+        src='https://api-maps.yandex.ru/2.1/?lang=ru_RU'
+        onReady={handleApiReady}
+      />
+      <div
+        ref={mapContainerRef}
+        className='w-full h-[500px] rounded-lg shadow-lg'
+      />
+    </>
   );
 };
 

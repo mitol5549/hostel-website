@@ -7,35 +7,35 @@ const POLICY_LINK = '/docs/personal-data-policy.pdf'
 
 export function WelcomePopup() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
     const timer = setTimeout(() => {
       const isAccepted = localStorage.getItem(STORAGE_KEY);
       if (!isAccepted) {
         setIsVisible(true);
-        document.body.style.overflow = 'hidden';
       }
     }, 1000);
 
     return () => {
       clearTimeout(timer);
-      document.body.style.overflow = '';
     };
   }, []);
 
   useEffect(() => {
-    if (!isMounted) return;
-    document.body.style.overflow = isVisible ? 'hidden' : '';
-  }, [isVisible, isMounted]);
+    if (!isVisible) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isVisible]);
 
   const handleAccept = () => {
     localStorage.setItem(STORAGE_KEY, 'true');
     setIsVisible(false);
   };
 
-  if (!isMounted || !isVisible) {
+  if (!isVisible) {
     return null;
   }
 

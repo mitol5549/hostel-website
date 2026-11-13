@@ -1,7 +1,7 @@
-import { heroui } from '@heroui/react';
+import { heroui } from '@heroui/theme';
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -16,6 +16,8 @@ module.exports = {
         green: {
           50: '#30AF5B',
           90: '#292C27',
+          600: '#16a34a',
+          700: '#15803d',
         },
         gray: {
           10: '#EEEEEE',
@@ -66,3 +68,5 @@ module.exports = {
   darkMode: 'class',
   plugins: [heroui()],
 };
+
+export default config;

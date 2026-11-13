@@ -19,12 +19,12 @@ export const ContactInfo: FC<ContactInfoProps> = ({ links }) => {
           <a
             href={link.href}
             key={`contact-link-${index}`}
-            className='flex justify-between'
+            className='flex min-w-0 flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4'
             target={link.openInNewTab ? '_blank' : undefined}
             rel={link.openInNewTab ? 'noopener noreferrer' : undefined}
           >
-            <p className='whitespace-nowrap medium-14'>{link.label}</p>
-            <p>{link.value}</p>
+            <p className='shrink-0 whitespace-nowrap medium-14'>{link.label}</p>
+            <p className='min-w-0 break-words sm:text-right'>{link.value}</p>
           </a>
         ))}
       </div>
