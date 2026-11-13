@@ -1,5 +1,33 @@
 # 'NextHotel' Hotel Services & Travel Guide Website Template
 
+## Среда разработки и проверка обновлений
+
+Проект использует Node.js 24 LTS и Yarn 1.22.22. Та же версия Node.js задана в Dockerfile.
+
+```bash
+nvm install
+nvm use
+yarn install --frozen-lockfile
+yarn dev
+```
+
+Перед публикацией обновлений зависимостей выполните `yarn lint`, `yarn typecheck`,
+`yarn build` и `yarn audit`. После сборки проверьте сайт через `yarn start`,
+включая мобильное меню, галерею, контакты и окно согласия.
+
+HeroUI остаётся на совместимой ветке 2.x; переход на 3.x требует отдельной миграции компонентов.
+
+На 12.11.2026 аудит не выявляет уязвимостей уровней high и critical. Остаются:
+
+- `deepmerge` через тему HeroUI: low, исправленная версия пока не опубликована
+  ([GHSA-gcqx-w48m-w2h4](https://github.com/advisories/GHSA-gcqx-w48m-w2h4)).
+- `minimatch` через инструменты TypeScript ESLint: moderate; исправление доступно
+  в 11.x, за пределами диапазона текущего родительского пакета
+  ([GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249)).
+
+В `resolutions` закреплены исправления для `picomatch` и `source-map-js`.
+При следующих обновлениях проверьте, нужны ли эти переопределения и устранены ли оставшиеся предупреждения.
+
 ![Captura de tela 2024-02-13 013531](https://github.com/igor32648/nextjs-hotel/assets/92551032/deb06b0f-1a07-48b6-a807-c21e98d82cd2)
 
 ![Captura de tela 2024-02-13 013554](https://github.com/igor32648/nextjs-hotel/assets/92551032/514dd2c9-164c-46a9-aac4-18303505d117)
